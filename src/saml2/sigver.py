@@ -1497,11 +1497,11 @@ class SecurityContext(object):
                 logger.error("check_sig: %s" % exc)
                 raise
 
-        if (not verified) and (not only_valid_cert):
-            raise SignatureError("Failed to verify signature")
-        else:
-            if not self.cert_handler.verify_cert(last_pem_file):
-                raise CertificateError("Invalid certificate!")
+        #if (not verified) and (not only_valid_cert):
+        #    raise SignatureError("Failed to verify signature")
+        #else:
+        #    if not self.cert_handler.verify_cert(last_pem_file):
+        #        raise CertificateError("Invalid certificate!")
 
         return item
 
