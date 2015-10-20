@@ -329,8 +329,9 @@ class HTTPBase(object):
 
         if sign and self.sec:
             _signed = self.sec.sign_statement(soap_message,
-                                              class_name=class_name(request),
-                                              node_id=request.id)
+                                              class_name(request),
+                                              request.id,
+                                              self.config.key_file)
             soap_message = _signed
 
         return {"url": destination, "method": "POST",
